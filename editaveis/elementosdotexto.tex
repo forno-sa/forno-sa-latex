@@ -2,14 +2,12 @@
 
 
 \section{Dimensionamento do Forno}
-
 O forno de tratamento térmico possuirá um volume interno de aproximadamente 8 litros, pois o objetivo é fabricar um forno de tratamento para fins acadêmicos, com corpos de prova segundo a norma ABNT 10611 e componentes mecânicos de pequeno porte, como engrenagens.
 
 A parte externa será compostas por uma estrutura de aço carbono como um chassi de sustentação ao peso do forno bem como todo suporte para materiais elétricos/eletrônicos, esse envoltório também será usado em formato de placas de para cobrir os tijolos expostos ao ambiente externo a fim de proteger contra choque mecânicos, conforme demonstrado no anexo b.
 
 Os tijolos utilizados para tal construção possuem dimensões de $350 x 150 x 60$ (mm) e são próprios para suportar temperaturas superiores a $1200 \degree C$ conforme mostrado na tabela a seguir, concedida pela empresa fornecedora desse material.
-
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{tabela_dimensoes}
 	\includegraphics[keepaspectratio=true,scale=0.7]{figuras/tabela_dimensoes.JPG}
@@ -17,71 +15,52 @@ Os tijolos utilizados para tal construção possuem dimensões de $350 x 150 x 6
 \end{figure}
 
 \subsection{Definindo alguns parâmetros de medida dentro do forno para definir os requisitos não funcionais}
-
 Como ponto de partida, foi considerado um forno pequeno para o tratamento térmico de um corpo de prova de aço. Este corpo de prova será submetido a uma temperatura de $1200 \degree C$, afim de se introduzir a martensita em sua estrutura, que é responsável pelo endurecimento e aumento da rigidez na estrutura do aço.
 
 Para o forno térmico, será então calculado algumas propriedades técnicas de funcionamento do forno, a espessura do isolante térmico selecionado, a temperatura máxima de operação da parede interna, onde as resistências serão instaladas, a temperatura máxima nas paredes sem a fonte de calor instalada, ou seja, várias incógnitas muito importantes na hora da montagem do produto.
 
 A seguir é apresentado em uma tabela algumas constantes consideradas para a primeira análise dessas propriedades. Na qual estão presentes alguns valores necessário para o cálculo das propriedades previstas no parágrafo anterior.
-
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{tab_constantes}
 	\includegraphics[keepaspectratio=true,scale=1.0]{figuras/tab_constantes.JPG}
 	\caption{Tabela de propriedades técnicas.}
 \end{figure}
 
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{vol_interno}
-	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/vol_interno.JPG}
+	\includegraphics[keepaspectratio=true,scale=0.65]{figuras/vol_interno.JPG}
 	\caption{Dados do Volume Interno do Forno.}
 \end{figure}
 
 A imagem acima retrada o dimensionamento interno escolhido pelo grupo de trabalho, onde A3 será a entrada do forno e terá área igual ao fundo, A1 e A2 são os lados, base e fundo respectivamente.
 
 \section{Cálculo da distribuição de temperatura no interior do forno}
-
 Nesta seção será tratado sobre os mecanismos básicos da condução de calor, convecção e condução. Estes ocorrem dentro do forno, através principalmente pela diferença de temperatura entre o interior do forno e o meio ambiente, que geram um fluxo de calor na direção do mais quente para o mais frio.
 
 Nesta seção será tratado sobre os mecanismos básicos da condução de calor, convecção, condução e radiação. Estes ocorrem dentro do forno, através principalmente pela diferença de temperatura entre o interior do forno e o meio ambiente, que geram um fluxo de calor na direção do mais quente para o mais frio.
-
 \begin{gather}
-	qk = \frac{T_1 - T_2}{Rk} \\
-    \text{Fluxo de calor}
-    \nonumber
-\end{gather}
-\begin{gather}
-	Rk = \frac{L}{Ka} \\
-    \text{Condu\c{c}\~ao}
-    \nonumber
-\end{gather}
-\begin{gather}
-	Rk = \frac{1}{ha} \\
-    \text{Convec\c{c}\~ao}
-    \nonumber
-\end{gather}
-
-\begin{gather}
-	ha = \frac{\epsilon * \sigma *(T^{4}-Tamb^{4})}{T - Tamb} \\
-    \text{Coeficiente de Radia\c{c}\~ao} \nonumber
+	qk = \frac{T_1 - T_2}{Rk} \hspace{10pt} \text{(Fluxo de calor)} \\
+	Rk = \frac{L}{Ka} \hspace{10pt} \text{(Condu\c{c}\~ao)} \\
+	Rk = \frac{1}{ha} \hspace{10pt} \text{(Convec\c{c}\~ao)} \\
+	ha = \frac{\epsilon * \sigma *(T^{4}-Tamb^{4})}{T - Tamb} \hspace{10pt} \text{(Coeficiente de Radia\c{c}\~ao)}
 \end{gather}
 
 \begin{gather}
     \text{har = Coeficiente de convec\c{c}\~ao do ar} \nonumber
 \end{gather}
 
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{dist_temperatura}
-	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/dist_temperatura.JPG}
+	\includegraphics[keepaspectratio=true,scale=0.5]{figuras/figura15.jpg}
 	\caption{Distribuição da temperatura ao longo de um material.}
 \end{figure}
-
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{dist_temperatura}
-	\includegraphics[keepaspectratio=true,scale=1.0]{figuras/dist_temperatura2.JPG}
+	\includegraphics[keepaspectratio=true,scale=0.5]{figuras/figura16.jpg}
 	\caption{Distribuição da temperatura ao longo da porta e do fundo.}
 \end{figure}
 
@@ -90,7 +69,6 @@ Para o Cálculo do coeficiente de radiação, foi preciso fazer algumas consider
 Além disso, este cálculo foi feito apenas para as resistências que possui a emissividade de 0,7, e não para o interior das placas refratárias, por essas possuírem um baixo valor de emissividade de 0,29, e ser necessário um processo iterativo de cálculo, a qual não se faz necessário para uma primeira estimativa.
 
 Com isso, a partir da fórmula do coeficiente de radiação, foi calculado o seguinte valor para o coeficiente de radiação:
-
 \begin{gather}
 	ha = 159W/m^{2}K \nonumber
 \end{gather}
@@ -100,14 +78,12 @@ Com isso tudo esclarecido será calculado a temperatura nas paredes internas no 
 Considerando o primeiro trecho, partindo do interior com $1200 \degree C$ até a parede interna com as resistências instaladas, a fórmula para o cálculo da temperatura, será apresentado logo a seguir.
 
 Foi considerado as paredes laterais do forno, a base e o topo como tendo resistências, a temperatura nessas paredes, em A1 e A2 será a seguinte.
-
 \begin{gather}
 	T1 = 1473K + \frac{qk}{har*A1} \nonumber \\
 	T2 = 1473K + \frac{qk}{har*A2} \nonumber
 \end{gather}
 
 Além disso foi considerado que as resistências estão igualmente espaçadas nas 4 paredes, ou seja, a potência também será dividida e sendo considerada como 750 W em A1 e A2.
-
 \begin{gather}
 	T_1 = \frac{1473 + 750} {259*360*10^{-4}} \nonumber \\
 	T_1 = 1553K = 1280 \degree C \nonumber
@@ -121,7 +97,6 @@ Além disso foi considerado que as resistências estão igualmente espaçadas na
 As temperaturas nas supferfícies A3 (forno e porta), serão consideradas, iguais as temperaturas de operação do forno, para se adquirir um sobre dimensionamento da espessura requerida para os tijolos refratários, então T3 será igual a $1200 \degree C$. Em outras palavras, foi considerado que não há problema algum de isolamento no fundo e na porta do forno, ou seja, nenhuma energia estaria se dissipando.
 
 Com as temperaturas nas paredes bem definidas, é possível calcular a transferência de calor nos tijolos refratários e nas placas de aço carbono, considerando apenas o fenômeno da condução.
-
 \begin{gather}
 	\frac{dQ}{dt} = \frac{\Delta T}{R}
 \end{gather}
@@ -129,23 +104,20 @@ Com as temperaturas nas paredes bem definidas, é possível calcular a transfer�
 	R = \frac{La}{Ka\, A} + \frac{Lt}{kt\, A}
 \end{gather}
 
-
  A única variável são as áreas que dependem da seção analisada e a espessura do tijolo. Por vias de uma segurança maior nos cálculos, serão considerados a temperatura na placa externa igual a temperatura no meio ambiente de 27ºC. A equação simplificada para obter Lt é a seguinte.
-
 \begin{gather}
     Ltx = \left(\Delta Tx - \frac{La}{Ka\, Ax} \frac{dQ}{dt} \right) \frac{kt\, Ax}{\frac{dQ}{dt}}
 \end{gather}
 
 Os cálculos com os subscritos x, são correspondentes com as seções analisadas. Cada uma delas com uma área e diferença de temperaturas diferentes, e consequentemente terão espessuras requeridas diferentes. A Potência correspondente para cada seção será novamente de 750 W devido a uma divisão homogênea dos resistores nas seções consideradas.
-
 \begin{gather}
 	\frac{dQ}{dt} = 500W \nonumber
 \end{gather}
 
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{tab}
-	\includegraphics[keepaspectratio=true,scale=1.0]{figuras/tab.JPG}
+	\includegraphics[keepaspectratio=true,scale=1.0]{figuras/figura17.JPG}
 	\caption{Cálculo das variáveis de temperatura interna do forno.}
 \end{figure}
 
@@ -163,7 +135,6 @@ Um dado obtido anteriormente neste trabalho é o tamanho necessário de resistê
 Com base nesse novo valor de comprimento, será realizado o cálculo dos comprimentos das resistências nas seções 1 e 2. Mas antes por proporção de área, será calculado as áreas superficiais de resistências, para que elas fiquem igualmente distribuídas nessas 2 seções.
 
 Declarando as variáveis X1 e X2 como sendo essas áreas superficiais equivalentes de resistência instaladas nas seções 1 e 2 respectivamente, temos os seguintes valores para X1 e X2.
-
 \begin{gather}
     At = 2\pi R*L \\
     At = 2\pi * 0.9 * 10^{-3} * 26 = 1470,26\text{cm}^{2} \nonumber
@@ -175,7 +146,6 @@ Declarando as variáveis X1 e X2 como sendo essas áreas superficiais equivalent
 \end{gather}
 
 Com esses valores podemos calcular os comprimentos dos fios localizados nas seções 1 e 2 da seguinte maneira.
-
 \begin{gather}
     Ly = \frac{Xy}{2\pi R} \\
     L1 = 10,26m \nonumber \\
@@ -184,14 +154,12 @@ Com esses valores podemos calcular os comprimentos dos fios localizados nas seç
 
 
 Com esses valores, é possível calcular o valor das resistências nas seções 1 e 2, pois sabe se que 26 m equivale a $16 \Omega$, portanto o fio deste projeto possui uma densidade resistiva de $0.6154 \Omega /m$, resultando nos seguintes valores para R1 e R2.
-
 \begin{gather}
     R1 = 6,36\Omega \nonumber \\
     R2 = 9,75\Omega \nonumber
 \end{gather}
 
 Com o valor da corrente de $i = 13,63 A$, é possível calcular a potência dissipada portanto nas seções 1 e 2.
-
 \begin{gather}
     Q = R*i^{2} \\
     Q1 = 1183,5W \nonumber \\
@@ -200,7 +168,6 @@ Com o valor da corrente de $i = 13,63 A$, é possível calcular a potência diss
 
 
 Por fins de praticidade, será calculado o valor da potência dissipada pela resistência em apenas 1 parede de cada sessão e o seu comprimento, pois este dado será utilizado na simulação no ANSYS\@. Esses valores são os seguintes.
-
 \begin{gather}
     q1 = 586,12W \nonumber \\
     q2 = 899,16W \nonumber
@@ -211,9 +178,7 @@ Por fins de praticidade, será calculado o valor da potência dissipada pela res
 \end{gather}
 
 \section{Sistema de Alimentação}
-
 \subsection{Tipo de Alimentação}
-
 O sistema de aquecimento do forno para tratamento térmico pode ser por meio convectivo com queimadores de alta velocidade com ar quente através da queima de gás GLP ou gás natural, ou o aquecimento pode ser através de resistências elétricas de alta temperatura.
 
 Os queimadores são convenientemente dispostos e aproximados para que possam atingir a taxa de temperatura adequada, porém há vários fatores que indisponibilizam essa tecnologia, já que não há um isolamento entre as chamas e o material a sofrer tratamento térmico, o controle da temperatura seria um grande desafio. A segurança é outro fator muito importante, visto que o seu uso torna o sistema quanto ao manuseio periculoso. O fator recurso financeiro também foi levantado em consideração, já que há uma a indisponibilidade do recurso na Unidade Acadêmica de Ensino.
@@ -223,48 +188,41 @@ O aquecimento resistivo é largamente empregado devido ao baixo custo e à boa c
 Como requisitos de segurança do sistema e da rede que conecta a tomada, o sistema será dimensionado para até 15 Amperes de corrente, pois de acordo com a NBR 14136, as tomadas domésticas devem operar a uma corrente de até 20 Amperes. Fazendo um fator de segurança de 5 Amperes evitamos vários problemas com a sobrecarga do circuito.
 
 \subsection{Sistema de Aquecimento}
-
 Para que o interior do forno de tratamento térmico atinja altas temperaturas, serão usados resistores para a geração de calor, os quais serão conectados a fonte de tensão a partir de um circuito de controle de corrente e estarão posicionados nas paredes internas do forno. Tais resistores se comportarão como fontes de calor para atmosfera interna do forno, e estarão dispostos de forma que tenha a maior área possível de contato para o ar e que exista um caminho livre para circulação e transferência do calor.
 
 Pela lei de ohm $(V=R x I)$, consegue-se garantir uma corrente constante e abaixo da estabelecida pela norma. Para que a temperatura seja controlada dentro do forno, será construído um circuito controlador, que fará uma flutuação entre na corrente, mantendo a temperatura dentro do forno com a menor flutuação possível.
 
 \subsection{Cálculo de Potência e Tempo de Aquecimento}
-
 Para alcançar a potência desejada de 3kW dimensionou-se as propriedades termodinâmicas no volume de controle do forno.
 
 Para definir a Potência, julgou-se uma situação de alta quantidade de calor necessária para esquentar um corpo de prova cujo tamanho seja igual ao volume interno do forno e de temperatura de têmpera alta, próxima ao definido pelo escopo do projeto que é um forno que atinja $1200 \degree \text{C}$. O material escolhido foi o Aço rápido sinterizado ASP 2017. Segue abaixo a curva de transformação com resfriamento contínuo do aço citado [11].
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{transf_continuo}
 	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/transf_continuo.JPG}
 	\caption{Curva de transformação com resfriamento contínuo.}
 \end{figure}
-
 \begin{gather}
 	T_{temp} = 1180 \degree \text{C}
 \end{gather}
 
 A quantidade de calor necessária para aquecer a temperatura de têmpera do Aço rápido sinterizado ASP 2017 está diretamente relacionada às suas propriedades como $T_{temp} = 1180 \degree \text{C}$, sua massa específica $p = 8000 kg/m^{3}$ e seu calor específico $c = 420 J/Kg \degree C$ (Referência) não variando com a Temperatura, pela fórmula abaixo:
-
 \begin{gather}
 	Q = \rho * V * c * (T_{temp} - T_{amb})
 \end{gather}
 
 Sendo V o volume de aproximadamente 8,28 litros, a $T_{amb}=20 \degree C$, substituindo na fórmula temos:
-
 \begin{gather}
     Q = 8*10^{3}*8,28*10^{-3}*420*(1180-20) \nonumber \\
     Q = 32,3 MJ \nonumber
 \end{gather}
 
 A partir dessa proposição e de acordo com a Primeira Lei da Termodinâmica para balanço de energia, e considerando o sistema adiabático de dentro do forno para o meio externo, a quantidade de calor Q é igual ao trabalho elétrico Wel convertido em energia térmica no meio. Sendo assim o balanço de energia se dá como:
-
 \begin{gather}
     Q = W_{el}
 \end{gather}
 
 Possuindo o $W_{el}$, conseguimos relacionar a Potência necessária para o forno, através da fórmula:
-
 \begin{gather}
     P = \frac{W_{el}}{\Delta t}
 \end{gather}
@@ -272,7 +230,6 @@ Possuindo o $W_{el}$, conseguimos relacionar a Potência necessária para o forn
 Sendo P a potência e $\Delta t$ o tempo em segundos.
 
 Supondo uma Potência de 3kW, e achando o tempo necessário:
-
 \begin{gather}
     \Delta t = \frac{W_{el}}{P} = \frac{32,3*10^6}{3*10^3} = 10758s = 2,98h \nonumber
 \end{gather}
@@ -280,15 +237,12 @@ Supondo uma Potência de 3kW, e achando o tempo necessário:
 Portanto, para aquecer um corpo de prova em uma situação de alta exigência do forno, o tempo de 3 horas é julgado aceitável para o projeto.
 
 \subsection{Dimensionamento da Resistência Elétrica}
-
 Para calcular a resistência foi utilizada a seguinte fórmula:
-
 \begin{gather}
     R = \frac{V^2}{P}
 \end{gather}
 
 Em que a tensão utilizada é de 220V e a potência é de 3kW. Feito os cálculos, a resistência encontrada foi de $16,13 \Omega$. Estas serão as condições para calcular a corrente máxima, onde o forno chegará a temperaturas de $1200 \degree C$. Para o material foi escolhido o fio Kanthal A-1(Cr 22\%, Al 5.8\% e Fe 72.2\%), levando em consideração a durabilidade e o alto desempenho desse material. Sabendo que o valor da resistência varia de acordo com a temperatura, é necessário converter essa resistência de acordo com a temperatura ambiente. Para valores de corrente e resistência, utilizou-se a temperatura de $20 \degree C$, da seguinte forma:
-
 \begin{gather}
     R_{20 \degree C} = \frac{R(T)}{C_T(T)}
 \end{gather}
@@ -296,7 +250,7 @@ Em que a tensão utilizada é de 220V e a potência é de 3kW. Feito os cálculo
 Onde $R(T)=16,13\Omega$ e $C_{T}(T)=1,04$, que é o fator de conversão do material a $1200\degree \text{C}$. Obtendo $R_{20\degree C}=15,5\Omega$.
 
 Utilizando os fatores de conversão do material, é possível determinar a variação da resistência com o aumento da temperatura. A tabela a seguir apresenta esses valores:
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{tabela1}
 	\includegraphics[keepaspectratio=true,scale=0.9]{figuras/alimentacao0.JPG}
@@ -311,19 +265,16 @@ Utilizando os fatores de conversão do material, é possível determinar a varia
 Observa-se a partir do gráfico acima, que a resistência aumenta com o aumento da temperatura, isso ocorre devido a degradação da  mobilidade de elétrons com o aumento da temperatura.
 
 A corrente máxima que passa através do fio é dada por:
-
 \begin{gather}
     I_{M\acute{A}X} = \frac{V}{R}
 \end{gather}
 
 Utilizando $V=220V$ e $R=16,13\Omega$ , obtém-se a corrente máxima de $13,64 A$ que está dentro da faixa de seguraça definida no projeto. Para escolher o fio mais apropriado que irá suportar essa corrente sem ser sobrecarregado foi calculada a superfície irradiante, que é calculada pela seguinte expressão:
-
 \begin{gather}
     S_i = \frac{I_{M\acute{A}X}^{2}*C_T(T)}{\gamma}
 \end{gather}
 
 Substituindo $I_{M\acute{A}X}=13,64A$, $C_T(T)=1,04$ e $y=2W/cm^{2}$(capacidade de condução de corrente), tem-se $96,75 cm^{2} / \Omega$. Pelas tabelas Kanthal, o fio mais apropriado, cuja superfície irradiante se encontra mais próxima desse valor, é o fio Kanthal A-1 com diâmetro 1,80mm e resistividade de $0,546\Omega /m$. O comprimento do fio é calculado pela expressão:
-
 \begin{gather}
     I = \frac{R_{20 \degree C}}{0,546}
 \end{gather}
@@ -331,12 +282,9 @@ Substituindo $I_{M\acute{A}X}=13,64A$, $C_T(T)=1,04$ e $y=2W/cm^{2}$(capacidade 
 O comprimento encontrado foi de 28,41m.
 
 \subsection{As resistências para aquecimento do forno}
-
 Após os cálculos do dimensionamento do sistema de alimentação, foi definido e justificado a escolha do fio Kanthal A-1 como o material da resistência a ser utilizado.
 Buscou-se em seguida realizar a compra do mesmo para iniciar a montagem do forno. Dentre os orçamentos realizados, optamos por um em preço que se adaptaria com a forma de trabalho da equipe. Por exemplo, a compra de uma maior metragem de fio para se ter uma folga de trabalho e o mesmo não enrolado para economizar no gasto de mão de obra.
 A partir dessa definição, optamos pela compra online da loja de materiais elétricos Casa Ferreira, situada em São Paulo. A resistência Kanthal A-1 nesta loja é vendida por quilo, e esse quilo totalizava 55 metros de fio. Tendo estimado o uso de cerca de 28 metros, sobra uma quantidade interessante de fio do ponto de vista de folga de trabalho. Sem a mão de obra de enrolar o fio embutida, encontrou-se um valor bem abaixo dos orçados em Brasília. Com o frete, o quilo de Kanthal A-1 saiu a R\$ 174,73.
-
-
 \begin{figure}[!h]
 	\centering
 	\label{resistencia1}
@@ -345,7 +293,6 @@ A partir dessa definição, optamos pela compra online da loja de materiais elé
 \end{figure}
 
 \subsection{Distribuição das resistências no forno}
-
 Para alocar as resistências dentro do forno de forma segura utilizamos a área interna das paredes do forno temos 3 dimensões:
 \begin{itemize}
 	\item Fundo e porta: $23x15 cm^2$
@@ -361,8 +308,7 @@ Utilizamos uma distância mínima de 4 cm para a porta, 4 cm para a parede de fu
 	\item laterais: $11x16cm^2$
 	\item fundo/topo: $19x16cm^2$
 \end{itemize}
-
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{areaforno}
 	\includegraphics[keepaspectratio=true,scale=1.0]{figuras/alimentacao2.JPG}
@@ -370,8 +316,7 @@ Utilizamos uma distância mínima de 4 cm para a porta, 4 cm para a parede de fu
 \end{figure}
 
 Para calcular a largura da espira que contém n bobinas da resistência Kanthal A-1 precisamos dimensionar os parâmetros da espira como na figura a seguir:
-
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{areaforno}
 	\includegraphics[keepaspectratio=true,scale=1.0]{figuras/alimentacao3.JPG}
@@ -379,13 +324,11 @@ Para calcular a largura da espira que contém n bobinas da resistência Kanthal 
 
 Para uma volta na bobina da resistência temos o diâmetro \textbf{D} da bobina, a altura \textbf{H} que corresponde a altura da espira e a largura do fio \textbf{L}. Abrindo a circunferência vemos que \textbf{L} é a hipotenusa do triângulo retângulo com \textbf{H} de um dos lados e a circunferência \textbf{$\pi D$} do outro.
 Logo para \textbf{n} bobinas considerando a circunferência \textbf{$\pi D$} como valor fixo e a média da altura de cada bobina \textbf{H/n} como valor fixo bobina  a fórmula para dimensionar as propriedades da bobina é:
-
 \begin{gather}
     L = n * \sqrt{(\pi D)^{2} + \left(\frac{H}{n}\right)^{2}}
 \end{gather}
 
 Considerando a expressão da altura de uma bobina \textbf{H/n=h} ou também chamado de “passo” e manejado as incógnitas temos uma expressão para o diâmetro da bobina:
-
 \begin{gather}
     L = \frac{H}{h} * \sqrt{(\pi D)^{2} + \left(h\right)^{2}}
 \end{gather}
@@ -393,8 +336,7 @@ Considerando a expressão da altura de uma bobina \textbf{H/n=h} ou também cham
 Onde H é o comprimento total da espira, h é o passo, D é o diâmetro da bobina (diâmetro interno + raio do fio) e L é o comprimento total do fio.
 Pelas medições precisávamos de uma resistência de $15,5\Omega$ (Ohm) o que dava uma média de 26 metros de comprimento de fio (L) usando o multímetro calibrado com o multímetro do laboratório de materiais da UnB gama.
 Com o diâmetro da espira sendo o mínimo desejável para não se aprofundar muito na parede e ao mesmo tempo não ser pequeno ao ponto de diminuir a quantidade de resistência no área da parede vimos que o diâmetro seria por volta de 1,5 cm e com um espaço de segurança de no mínimo 2 cm entre uma canaleta e outra temos:
-
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{resistencia2}
 	\includegraphics[keepaspectratio=true,scale=1.0]{figuras/alimentacao4.JPG}
@@ -421,8 +363,7 @@ Diâmetro das canaletas = 1,56 cm
 
 Os dois espaços de segurança são maiores que 2 cm deixando as resistências bem distribuídas dentro do forno de forma segura e homogênea já que ficarão todas dispostas simetricamente nas paredes em relação às bordas.
 As ligações entre uma canaleta a outra serão feitas por um fio não bobinado de resistência aumentando no cálculo do L final cerca de 50 cm de fio ( + $0.25\Omega$)
-
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{resistencia3}
 	\includegraphics[keepaspectratio=true,scale=1.0]{figuras/alimentacao5.JPG}
@@ -432,21 +373,21 @@ Cada parede tem sua própria espira de resistência, logo as quatro paredes ser�
 
 \subsection{Fabricação das espiras resistivas}
 Para enrolar as resistências com o material disponível, foi feito um sistema com um cabo de aço de 3,13 metros e diâmetro 1,4cm e dois alicates de pressão. O diâmetro do aço foi o molde para o diâmetro interno da espira. Um alicate de pressão fixou a ponta da resistência no cabo, e outro alicate foi utilizado para girar a barra de aço enquanto o operador tencionava o fio, como no figura abaixo:
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{foto1}
 	\includegraphics[keepaspectratio=true,scale=1.0]{figuras/alimentacao6.JPG}
 \end{figure}
 
 O fio tinha o tamanho \textbf{L} de 28 m e $18\Omega$, a barra tinha a comprimento \textbf{H} de 3,13 m. Com isso conseguimos enrolar a espira de tamanho suficiente para o projeto:
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{foto2}
 	\includegraphics[keepaspectratio=true,scale=1.0]{figuras/alimentacao7.JPG}
 \end{figure}
 
 Para a resistência necessária ($15,5 \Omega$) com fator de segurança prático dimensionamos em média 1 Ohm para cada canaleta e recortamos a resistência de cada parede:
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{foto3}
 	\includegraphics[keepaspectratio=true,scale=1.0]{figuras/alimentacao8.JPG}
@@ -454,35 +395,35 @@ Para a resistência necessária ($15,5 \Omega$) com fator de segurança prático
 
 \subsection{Confecção das canaletas na parede do forno}
 Para garantir o aquecimento do forno não basta enrolar a espira de resistências, mas precisamos também confeccionar as canaletas em que elas estarão dispostas. Para isso utilizamos o material refratário de 5 cm de espessura e após o lixamento para manter a parede uniforme desenhamos o caminho a ser percorrido pelas canaletas:
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{foto4}
 	\includegraphics[keepaspectratio=true,scale=1.0]{figuras/alimentacao9.JPG}
 \end{figure}
 
 Após todas as marcações concluídas, fizemos as perfurações usando uma furadeira de impacto, tomando o cuidado para perfurar em diagonal nas laterais e no topo para evitar que as canaletas caiam utilizando não somente a pressão, mas também a gravidade para mantê-las dentro da parede como nas figuras:
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{foto5}
 	\includegraphics[keepaspectratio=true,scale=1.0]{figuras/alimentacao10.JPG}
 \end{figure}
 
 Ajustando os detalhes  mais refinados da canaleta com a lixa e o estilete:
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{foto6}
 	\includegraphics[keepaspectratio=true,scale=1.0]{figuras/alimentacao11.JPG}
 \end{figure}
 
 Em testes realizados observamos que a resistência aquecida queima o material refratário. Para resolver o problema revestimos as paredes com cimento, aumentando a pressão quem cima das resistências a serem posicionadas e protegendo a parede do forno de danos causados pela resistência:
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{foto7}
 	\includegraphics[keepaspectratio=true,scale=1.0]{figuras/alimentacao12.JPG}
 \end{figure}
 
 Após a secagem e a instalação das resistências nas canaletas ligadas em série fizemos o circuito de alimentação com as resistências em série direto na tensão da tomada utilizando um fio com capacidade para 3 kW e uma tomada de capacidade de até 20 A. testamos por fim a corrente que passa no sistema com o alicate de medição.
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{foto8}
 	\includegraphics[keepaspectratio=true,scale=1.0]{figuras/alimentacao13.JPG}
@@ -491,20 +432,15 @@ Após a secagem e a instalação das resistências nas canaletas ligadas em sér
 O resultado foi 13,8 A, onde para potência de 3kW é necessário teoricamente uma corrente de 13,6 A, mostrando assim bons resultados práticos. A resistência na teoria tende a aumentar suavemente levando o forno a uma potência um pouco mais baixa a 1200 graus porém com pouca variação como pode ser visto no gráfico TxR. A potência a temperatura ambiente é $p_{20 \degree C} = \frac{V^{2}}{R}$ sendo aproximadamente $R = 15,8 \Omega$, $p_{20 \degree C} = 3063,3W$.
 
 Para temperaturas a $1200\degree C$ onde aproximadamente $R = 16,2\Omega$:
-
 \begin{gather}
     p_{20 \degree C} = \frac{V^{2}}{R} = \frac{220^{2}}{16,4} = 2951,2W
 \end{gather}
 
 Uma diferença desprezível que é possível graças às propriedades do fio que não se alteram bruscamente com o aumento da temperatura.
 
-\subsection{Distribuição dos Resistores}
-
-
 \subsection{Tratamento Térmico}
-
 Um exemplo de tratamento térmico muito usado na industria é o processo de têmpera, que consiste no submeter o aço a uma temperatura em média $50 \degree C$ acima da zona crítica de austenitização para o aços até 0,8\% de carbono e $50 \degree C$ acima do limite inferior da zona crítica de austenitização para o aços acima de 0,8\% de carbono A zona crítica de austenitização varia com o aumento da composição de carbono no aço como na figura abaixo:
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{austenitizacao}
 	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/austenitizacao.JPG}
@@ -512,7 +448,7 @@ Um exemplo de tratamento térmico muito usado na industria é o processo de têm
 \end{figure}
 
 Após manter o aço por um tempo  na zona crítica representada pela área vermelha do gráfico, ele muda sua sua estrutura cristalina para a austenítica ou “austenítica + cementita” que a altas temperaturas substituí qualquer estrutura existente no corpo de prova anteriormente. Após esse processo o aço é resfriado bruscamente em água passando de temperaturas entre 780 a $900 \degree C$ à temperatura ambiente de forma rápida com o objetivo de obter a estrutura Martensítica do aço que tem características duras e frágeis e evitando estruturas mais moles como ferrita, bainita e perlita:
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{resfriamento1}
 	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/resfriamento1.JPG}
@@ -521,7 +457,7 @@ Após manter o aço por um tempo  na zona crítica representada pela área verme
 
 O tempo de formação de Martensita é diferente na superfície e no centro do corpo de prova, devido ao contato direto da superfície com o meio refrigerante, levando o tempo da temperização no centro do corpo de prova a ser até 10 vezes maior que na superfície. Essa variação temporal pode gerar diferenças na estrutura do material, e isso deve ser considerado dependendo do objetivo do operador.
 
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{resfriamento2}
 	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/resfriamento2.JPG}
@@ -534,14 +470,14 @@ O aço é definido no Brasil pela NBR 6215:2011 como uma liga ferrosa passível 
 
 No Brasil, a Associação Brasileira de Normas Técnicas - ABTN, por intermédio da norma NBR NM 87:2000 classifica os aços-carbono comuns e os de baixo teor em liga segundo os critérios adotados pela AISI (\textit{American Iron and Steel Institute}) e SAE (\textit{Society of Automotives Engineers}).
 
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{tab_sae1}
 	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/tab_sae1.JPG}
 	\caption{Composição química de aços Sae 10XX\@. Fonte: ABNT/SAE J403, 1995.}
 \end{figure}
 
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{tab_sae2}
 	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/tab_sae2.JPG}
@@ -554,14 +490,14 @@ Para o trabalho foi escolhido o corpo de prova SAE 1045, que é considerado aço
 São aços que possuem boa conformabilidade à frio e razoável resistência mecânica com acabamento laminado, trefilado ou retificado.
 
 Para que seja realizados tratamentos térmicos, é necessário ter conhecimento sobre a curva TTT (tempo-temperatura-transformação) do material, que relaciona as variáveis da micro estrutura com o tempo e a temperatura.
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{diagramattt}
 	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/diagramattt.JPG}
 	\caption{Diagrama TTT do aço SAE 1045 Fonte: DOMINGUES et.al 2010.}
 \end{figure}
 
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{curva_temperatura}
 	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/curva_temperatura.JPG}
@@ -572,7 +508,7 @@ O aço Sae 1045 costuma ter no máximo seção transversal de no máximo 60mm. P
 
 O processo de têmpera é completo após a técnica de resfriamento do material, após a temperatura de austenitização, no qual objetiva-se a formação de constituintes resultantes como cementita, ferrita e principalmente martensita, fase metaestável supersaturada de carbono e, portanto de alta dureza. O rápido processo de troca de ambiente de alto calor para um ambiente de baixo calor (até um segundo) permite a formação de martensita.
 
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{tab_valoresH}
 	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/tab_valoresH.JPG}
@@ -586,7 +522,7 @@ A estrutura do projeto foi pensada para se obter a menor perda de calor durante 
 
 Portanto uma pesquisa foi realizada pelo grupo elegendo os melhores materiais de acordo com as características do projeto.
 
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{res1}
 	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/res1.JPG}
@@ -597,7 +533,7 @@ MÉTODOS DE FABRICAÇÃO
 	\item As placas de fibra cerâmicas foram medidas e cortadas de acordo com as dimensões especificadas no projeto segundo a tabela abaixo:
 \end{itemize}
 
-\begin{table}[!ht]
+\begin{table}[ht]
 	\centering
 	\label{my-label}
 	\begin{tabular}{|p{6cm}|p{5cm}|c|}
@@ -628,14 +564,14 @@ MÉTODOS DE FABRICAÇÃO
 
 Para que o forno possa aquecer de maneira controlada, um circuito eletrônico de potência foi desenvolvido para controlar a energia vinda da tomada de 220 V de corrente alternada. O diagrama do sistema pode ser visto na Figura \label{diagramacircuito}.
 
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{diagramacircuito}
 	\includegraphics[keepaspectratio=true,scale=1.0]{figuras/diagramacircuito.JPG}
 	\caption{Diagrama do circuito de potência}
 \end{figure}
 
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{diagrama}
 	\includegraphics[keepaspectratio=true,scale=0.5]{figuras/diagrama.jpg}
@@ -644,7 +580,7 @@ Para que o forno possa aquecer de maneira controlada, um circuito eletrônico de
 
 Basicamente, o sistema é ligado à um isolador de rede por motivos de segurança que irá diminuir a tensão/corrente e irá se conectar ao detector de passagem por zero. Esse circuito de detecção é responsável por gerar sinais no momento em que a rede cruzar o zero como mostra a Figura by~\ref{redeAC}. Pelo fato da rede ser de 60Hz, os cruzamentos serão detectados a cada 8.33ms. Esse sinal é então enviado ao microcontrolador arduíno, que irá gerar interrupções durante cada recebimento de cruzamento por zero, e posteriormente, irá executar as funções de tratamento adequada.
 
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{redeAC}
 	\includegraphics[keepaspectratio=true,scale=1.0]{figuras/redeAC.JPG}
@@ -655,7 +591,7 @@ O arduíno irá então, enviar sinais para o circuito de ativação durante temp
 
 O circuito de ativação, acionado pelo arduíno, irá então produzir uma corrente de gate necessário para a ativação do triac no tempo calculado. O triac funciona conforme figura by~\ref{triac}. Ao detectar a passagem por zero, o arduíno irá enviar o sinal para disparar no tempo certo o triac, sendo assim possível controlar a fase de acionamento desse dispositivo. Uma vez acionado, ele só é desligado quando a rede cruza o zero novamente.
 
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{triac}
 	\includegraphics[keepaspectratio=true,scale=1.0]{figuras/triac.JPG}
@@ -666,7 +602,7 @@ O forno foi projetado para funcionar até 14A quando ligado em sua potência má
 
 A figura by~\ref{circuitocontrole} mostra o circuito completo. Como pode-se ver um transformador 220-18V AC foi utilizado para isolar o circuito da rede. O circuito de detecção por zero é realizado por uma ponte de diodo que irá retificar o sinal, e estará assim, ligando o led contido no optoacoplador 4N25. Esse led polariza o transistor e assim, o arduino consegue detectar os pulsos gerados durante as passagens por zero da rede.
 
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{circuitocontrole}
 	\includegraphics[keepaspectratio=true,scale=1.0]{figuras/circuitocontrole.JPG}
@@ -678,7 +614,7 @@ O arduíno envia através do GPIO4 ARDUINO, localizado na parte inferior da figu
 \subsection{Sistema de Temperatura}
 O módulo da temperatura é formado por um termopar tipo K que possui faixa de atuação de $-270 \degree C$ à $1230 \degree C$. Para cada valor de temperatura é gerado uma diferença de potencial de acordo com o anexo 1. Conforme apresentado no diagrama, é necessário um circuito condicionador de sinal, e foi escolhido para isso o CI MAX 6675, que irá amplificar e converter o valor analógico do termopar em um valor digital para leitura da temperatura no Arduíno, além de ser o circuito responsável pela compensação de junção fria, processo necessário para retirar a temperatura ambiente do cálculo da temperatura lida pelo termopar.
 
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{termopar}
 	\includegraphics[keepaspectratio=true,scale=1.0]{figuras/termopar.JPG}
@@ -687,7 +623,7 @@ O módulo da temperatura é formado por um termopar tipo K que possui faixa de a
 
 Para leitura dos dados da temperatura, utiliza-se a biblioteca max6675.h do Arduíno para fazer a comunicação entre o microcontrolador e o termopar através do protocolo SPI (Serial Peripheral Interface). Esse tipo de protocolo é utilizado para a comunicação entre um microntrolador, denominado como mestre, e um ou mais periféricos, denominados como escravos. No ci MAX 6675 o pino SCK deve receber o clock de sincronismo com o Arduíno, o de SO é o pino responsável por enviar os dados de leitura do termopar para o Arduíno e o pino CS indica quando o Arduíno irá requisitar a comunicação com o MAX 6675.
 
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{datasheet}
 	\includegraphics[keepaspectratio=true,scale=1.0]{figuras/datasheet.JPG}
@@ -724,7 +660,7 @@ Através do sinal de erro o controlador PID gera um sinal de controle para o atu
 \subsection{Trava Eletrônica}
 O forno será provido de uma trava controlada eletronicamente por software. Para isso foi escolhido o servo motor TOWER PRO MG995, com possibilidade de movimentação de 180 graus, com torque de 15KG/cm quando alimentado com 5V. Os testes mostraram que a sua funcionalidade é bem simples, bastando um simples sinal PWM como sinal de controle para a angulação do motor. O circuito está na Figura by~\ref{trava}:
 
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{trava}
 	\includegraphics[keepaspectratio=true,scale=0.7]{figuras/trava.JPG}
@@ -734,7 +670,7 @@ O forno será provido de uma trava controlada eletronicamente por software. Para
 \subsection{LCD}
 O display de LCD 16x02 foi escolhido como interface do forno, para mostrar a temperatura em tempo real em frente ao forno.
 
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{lcd}
 	\includegraphics[keepaspectratio=true,scale=0.7]{figuras/lcd.JPG}
@@ -743,7 +679,7 @@ O display de LCD 16x02 foi escolhido como interface do forno, para mostrar a tem
 
 O circuito está na figura by~\ref{lcd}. Os pinos de escrita e dados são ligados ao arduíno. O potênciômetro é responsável por controlar a luz de fundo do display. A figura by~\ref{display} mostra o display de LCD em funcionamento:
 
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{display}
 	\includegraphics[keepaspectratio=true,scale=1.0]{figuras/display.JPG}
@@ -753,7 +689,7 @@ O circuito está na figura by~\ref{lcd}. Os pinos de escrita e dados são ligado
 \subsection{Resultados}
 Para o teste do controle de potência foi utilizado uma lâmpada incandescente com resistência de $90 \Omega$. Inicialmente foi feito um código, Anexo 1, para reconhecer o cruzamento com zero da rede elétrica e contar quantas vezes isso ocorre por segundo. Para isso, ativa-se uma interrupção no pino 2 do Arduíno e toda vez que esse valor for igual a zero incrementa na variável pulsos. Como esse cruzamento acontece 1 vez a cada meio ciclo e temos uma frequência da senóide da rede elétrica de 60 Hz, o valor reconhecido pelo Arduíno deve ser de 120 conforme imagem abaixo:
 
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{resultado1}
 	\includegraphics[keepaspectratio=true,scale=1.0]{figuras/resultado1.JPG}
@@ -762,14 +698,14 @@ Para o teste do controle de potência foi utilizado uma lâmpada incandescente c
 
 Ao reconhecer o pulso, deve-se mandar um sinal de ativação do TRIAC de acordo com a quantidade de potência que se deseja inserir na carga, para isso foi feito o código conforme Anexo 2. A tabela a seguir foi feita de acordo com a porcentagem de corrente que se desejava passar para a lâmpada, controlando em qual o ângulo de disparo do triac, e foi medida a tensão de saída da carga:
 
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{tabpotencia}
 	\includegraphics[keepaspectratio=true,scale=1.0]{figuras/tabpotencia.JPG}
 	\caption{Relação entre porcentagem da potência desejada e a tensão RMS medida na carga.}
 \end{figure}
 
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{luminosidade}
 	\includegraphics[keepaspectratio=true,scale=1.0]{figuras/luminosidade.JPG}
@@ -778,7 +714,7 @@ Ao reconhecer o pulso, deve-se mandar um sinal de ativação do TRIAC de acordo 
 
 Para leitura dos valores de temperatura do termopar foi considerado um delay de 1s, conforme mostra o código no Anexo 3, entre as amostras coletadas e apresentado os valores no monitor do Arduíno. Para variar a temperatura foi utilizado um isqueiro próximo ao termopar e visto a temperatura medida.
 
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{testetemperatura}
 	\includegraphics[keepaspectratio=true,scale=1.0]{figuras/testetemperatura.JPG}
@@ -811,7 +747,7 @@ A metodologia do projeto de software do forno deverá seguir as seguintes práti
 
 As features do sistema de controle do forno térmico serão descritas pela matriz Feature e Benefício (FAB) \cite{safe2015}. Elas descrevem os requisitos funcionais do sistema proposto.
 
-\begin{table}[!ht]
+\begin{table}[ht]
 	\raggedright
 	\label{my-label}
 	\begin{tabular}{|p{3cm}|l|}
@@ -862,7 +798,7 @@ O Plano de Teste de Software é apresentado no Anexo 4.
 \subsubsection{Isolamento Térmico}
 Na parte estrutural foi a escolhido a utilização das placas cerâmicas no lugar dos tijolos refratários, pela melhor qualidade no isolamento térmico, diminuição de custo e fácil usinabilidade. As características da placa e a sua curva de condutividade térmica estão mostradas abaixo.
 
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{on_off}
 	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/condutividade.JPG}
@@ -880,7 +816,7 @@ Características:
 
 O custo associado a estrutura do forno foi minimizada, pois os tijolos teriam um custo de R\$ 1080,00. Já com as placas refratárias, esse custo foi reduzido pela metade, conforme mostrado no orçamento do fornecedor.
 
-\begin{figure}[!ht]
+\begin{figure}[ht]
 	\centering
 	\label{on_off}
 	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/custototal.JPG}
