@@ -517,7 +517,87 @@ O processo de têmpera é completo após a técnica de resfriamento do material,
 
 A variação da taxa de resfriamento entre água e salmoura é de 27,6\% até 110\% e a diminuição do tempo de resfriamento é de 7,8\% até 63,3\% em relação à agitação. Ar e óleo possui uma severidade muito baixa de tempera e salmoura possui uam severidade mais alta que o ideal. Dessa forma o resultado de têmpera com resfriamento em água gera um aumento de 20\% de martensita na estrutura do aço em relação á tratamento com salmoura. (CARVALHO, 2004)
 
-\subsection{Resultados}
+\chapter[Resultados]{Resultados}
+\section{Simulações}
+\subsection{Simulação numérica em elementos finitos}
+Para validarmos a estrutura e observarmos como o forno reagiria com temperatura fizemos
+uma análise numérica em elementos finitos no qual utilizamos o Software ANSYS na plataforma
+Steady-State Thermal e Transient Thermal. Estas plataformas nos apresentaram resultados através
+de gráficos, que utilizamos antes da montagem para termos uma noção do dimensionamento do
+forno e após utilizamos estes mesmos resultados para evitar erros futuros que possam vim a ocorrer
+no desenvolvimento do produto.
+
+A seguir será apresentado todo o processo em etapas a ser realizado nesta analise numérica
+computacional, no qual procuramos o dimensionamento com as certas aproximações da realidade
+para que se tenha um projeto de engenharia bem estruturado.
+MÉTODOS DE FABRICAÇÃO
+\begin{itemize}
+\begin{itemize}
+	\item Modelagem &(Pré-Processamento)
+	\item Análise   &(Pré-Processamento)
+	\item Processamento de dados &(Processamento)
+	\item Interpretação e Utilização &(Pós-Processamento)
+\end{itemize}
+Para iniciarmos fizemos um CAD(Computer Aided Design) do modelo do forno para que
+possamos ver o dimensionamento das dimensões e que possa ser colocado no software para a suas
+devidas analises. Na realização das analises foi determinado os tipos de materiais utilizados para que
+possamos incluir no programa e este fazer o estudo com estas informações
+%TODO
+\begin{figure}[ht]
+	\centering
+	\label{ansys1}
+	\includegraphics[keepaspectratio=true,scale=0.8]{%TODO}
+	\caption{Corte transversal da extrutura}
+\end{figure}
+
+\subsection{Malha}
+Nesta etapa fizemos a discretização da malha para fazer as interações e com o
+conhecimento adquirido no qual procuramos ter uma melhor interação nodal.
+
+magem
+
+Essa interação maior foi procurado nos contatos. Para que possamos nós aproximar mais dos
+resultados reais. Como podemos ver na imagem mais aproximada, nos contatos de geometrias
+procuramos ter uma aproximação das nodais de um contato de material diferente com o outro, com
+isto aumentado a interação dos elementos.
+
+imagem
+
+\subsection{Parte estacionária}
+Para a validação da estrutura, procuramos demonstrar a qual temperatura o forno chegaria
+externamente quando estivesse em sua máxima temperatura, fizemos um teste estático de
+temperatura pelo software. Nesta analise realizamos algumas etapas que serão demonstradas a
+seguir.
+
+Após a realização da malha foi realizado a etapa da entrada de dados no qual primeiramente
+utilizamos uma ferramenta no qual simula um gerador de calor que no programa se chama “Internal
+Heat Generation”. Este valor foi gerado através do dado da potência do forno de 3000 W, ele é dado
+em W/m³, e foi calculado dividindo se a potência das resistências consideradas (embaixo e encima
+1814,5 W e nas laterais 1183,5 W) pelo volume das espiras consideradas das seções consideradas,
+portanto foi utilizado dois valores diferentes pois as espiras superior e inferior são maiores que as
+laterais.
+
+Afim de se ter a simulação funcionando na sua temperatura máxima de operação, foi
+necessário fazer uma amostragem de dados da temperatura, assim como da taxa de aquecimento
+interna do forno. Esses dados se fazem necessários apenas para ajudar no processo de interpolação
+interna, os seus valores reais serão obtidos na simulação transiente.
+
+imgem
+
+Após isto foi inserido a temperatura das espiras no qual gostaríamos de que ela em seu
+maior range de temperatura alcance os 1200 o C. Nas espiras também foi adicionado a emissividade
+do material das espiras das resistências.
+
+imagem
+
+No interior foi colocado a convecção, este dado encontrado nas informações do fabricante, e
+a emissividade no interior do forno.
+
+imagem
+
+
+
+\section{Métodos de Fabricação}
 A estrutura do projeto foi pensada para se obter a menor perda de calor durante o funcionamento do forno, uma variável crítica do projeto, bem como facilidade de fabricação, montagem dos elementos e custo associado.
 
 Portanto uma pesquisa foi realizada pelo grupo elegendo os melhores materiais de acordo com as características do projeto.
