@@ -456,7 +456,6 @@ Após manter o aço por um tempo  na zona crítica representada pela área verme
 \end{figure}
 
 O tempo de formação de Martensita é diferente na superfície e no centro do corpo de prova, devido ao contato direto da superfície com o meio refrigerante, levando o tempo da temperização no centro do corpo de prova a ser até 10 vezes maior que na superfície. Essa variação temporal pode gerar diferenças na estrutura do material, e isso deve ser considerado dependendo do objetivo do operador.
-
 \begin{figure}[ht]
 	\centering
 	\label{resfriamento2}
@@ -469,14 +468,12 @@ O tempo de formação de Martensita é diferente na superfície e no centro do c
 O aço é definido no Brasil pela NBR 6215:2011 como uma liga ferrosa passível de deformação plástica que, em geral, apresenta teor de carbono entre 0,008\% e 2,0\% na sua forma combinada e, ou, dissolvida e que pode conter elementos de liga adicionados, ou residuais.
 
 No Brasil, a Associação Brasileira de Normas Técnicas - ABTN, por intermédio da norma NBR NM 87:2000 classifica os aços-carbono comuns e os de baixo teor em liga segundo os critérios adotados pela AISI (\textit{American Iron and Steel Institute}) e SAE (\textit{Society of Automotives Engineers}).
-
 \begin{figure}[ht]
 	\centering
 	\label{tab_sae1}
 	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/tab_sae1.JPG}
 	\caption{Composição química de aços Sae 10XX\@. Fonte: ABNT/SAE J403, 1995.}
 \end{figure}
-
 \begin{figure}[ht]
 	\centering
 	\label{tab_sae2}
@@ -496,7 +493,6 @@ Para que seja realizados tratamentos térmicos, é necessário ter conhecimento 
 	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/diagramattt.JPG}
 	\caption{Diagrama TTT do aço SAE 1045 Fonte: DOMINGUES et.al 2010.}
 \end{figure}
-
 \begin{figure}[ht]
 	\centering
 	\label{curva_temperatura}
@@ -507,7 +503,6 @@ Para que seja realizados tratamentos térmicos, é necessário ter conhecimento 
 O aço Sae 1045 costuma ter no máximo seção transversal de no máximo 60mm. Para seções transversais maiores, o material não apresenta boa reação à têmpera e sua dureza diminui sensivelmente. O aço SAE 1045 deve ser aquecido entre $820 \degree C$ e $840 \degree C$ em média, por 10 minutos por milímetro, para que haja maior elevação da ductilidade e resistência assim como evitar trincamentos.
 
 O processo de têmpera é completo após a técnica de resfriamento do material, após a temperatura de austenitização, no qual objetiva-se a formação de constituintes resultantes como cementita, ferrita e principalmente martensita, fase metaestável supersaturada de carbono e, portanto de alta dureza. O rápido processo de troca de ambiente de alto calor para um ambiente de baixo calor (até um segundo) permite a formação de martensita.
-
 \begin{figure}[ht]
 	\centering
 	\label{tab_valoresH}
@@ -530,38 +525,44 @@ no desenvolvimento do produto.
 A seguir será apresentado todo o processo em etapas a ser realizado nesta analise numérica
 computacional, no qual procuramos o dimensionamento com as certas aproximações da realidade
 para que se tenha um projeto de engenharia bem estruturado.
-MÉTODOS DE FABRICAÇÃO
 \begin{itemize}
-\begin{itemize}
-	\item Modelagem &(Pré-Processamento)
-	\item Análise   &(Pré-Processamento)
-	\item Processamento de dados &(Processamento)
-	\item Interpretação e Utilização &(Pós-Processamento)
+	\item Modelagem (Pré-Processamento)
+	\item Análise (Pré-Processamento)
+	\item Processamento de dados (Processamento)
+	\item Interpretação e Utilização (Pós-Processamento)
 \end{itemize}
+
 Para iniciarmos fizemos um CAD(Computer Aided Design) do modelo do forno para que
 possamos ver o dimensionamento das dimensões e que possa ser colocado no software para a suas
 devidas analises. Na realização das analises foi determinado os tipos de materiais utilizados para que
 possamos incluir no programa e este fazer o estudo com estas informações
-%TODO
 \begin{figure}[ht]
 	\centering
 	\label{ansys1}
-	\includegraphics[keepaspectratio=true,scale=0.8]{%TODO}
+	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/ansys1.jpg}
 	\caption{Corte transversal da extrutura}
 \end{figure}
 
 \subsection{Malha}
 Nesta etapa fizemos a discretização da malha para fazer as interações e com o
 conhecimento adquirido no qual procuramos ter uma melhor interação nodal.
-
-magem
+\begin{figure}[ht]
+	\centering
+	\label{ansys_malha1}
+	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/ansys_malha1.jpg}
+	\caption{Malha da Geometria}
+\end{figure}
 
 Essa interação maior foi procurado nos contatos. Para que possamos nós aproximar mais dos
 resultados reais. Como podemos ver na imagem mais aproximada, nos contatos de geometrias
 procuramos ter uma aproximação das nodais de um contato de material diferente com o outro, com
 isto aumentado a interação dos elementos.
-
-imagem
+\begin{figure}[ht]
+	\centering
+	\label{ansys_malha2}
+	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/ansys_malha2.jpg}
+	\caption{Zoom da malha na seção transversal}
+\end{figure}
 
 \subsection{Parte estacionária}
 Para a validação da estrutura, procuramos demonstrar a qual temperatura o forno chegaria
@@ -572,7 +573,7 @@ seguir.
 Após a realização da malha foi realizado a etapa da entrada de dados no qual primeiramente
 utilizamos uma ferramenta no qual simula um gerador de calor que no programa se chama “Internal
 Heat Generation”. Este valor foi gerado através do dado da potência do forno de 3000 W, ele é dado
-em W/m³, e foi calculado dividindo se a potência das resistências consideradas (embaixo e encima
+em $W/m^{3}$, e foi calculado dividindo se a potência das resistências consideradas (embaixo e encima
 1814,5 W e nas laterais 1183,5 W) pelo volume das espiras consideradas das seções consideradas,
 portanto foi utilizado dois valores diferentes pois as espiras superior e inferior são maiores que as
 laterais.
@@ -581,21 +582,234 @@ Afim de se ter a simulação funcionando na sua temperatura máxima de operaçã
 necessário fazer uma amostragem de dados da temperatura, assim como da taxa de aquecimento
 interna do forno. Esses dados se fazem necessários apenas para ajudar no processo de interpolação
 interna, os seus valores reais serão obtidos na simulação transiente.
-
-imgem
+\begin{figure}[ht]
+\centering
+    \begin{subfigure}{0.49\linewidth} \centering
+        \includegraphics[scale=0.5]{figuras/ansys2.jpg}
+        \label{ansys2}
+    \end{subfigure}
+    \begin{subfigure}{0.49\linewidth} \centering
+        \includegraphics[scale=0.5]{figuras/ansys3.jpg}
+        \label{ansys3}
+    \end{subfigure}
+    \caption{Dados inseridos para transferência de calor dos resistores}
+\end{figure}
 
 Após isto foi inserido a temperatura das espiras no qual gostaríamos de que ela em seu
-maior range de temperatura alcance os 1200 o C. Nas espiras também foi adicionado a emissividade
+maior range de temperatura alcance os 1200ºC. Nas espiras também foi adicionado a emissividade
 do material das espiras das resistências.
-
-imagem
+\begin{figure}[ht]
+\centering
+    \begin{subfigure}{0.49\linewidth} \centering
+        \includegraphics[scale=0.5]{figuras/ansys10.jpg}
+        \label{ansys10}
+    \end{subfigure}
+    \begin{subfigure}{0.49\linewidth} \centering
+        \includegraphics[scale=0.5]{figuras/ansys6.jpg}
+        \label{ansys6}
+    \end{subfigure}
+    \caption{Dados da utilizados na resistência}
+\end{figure}
 
 No interior foi colocado a convecção, este dado encontrado nas informações do fabricante, e
 a emissividade no interior do forno.
+\begin{figure}[ht]
+\centering
+    \begin{subfigure}{0.49\linewidth} \centering
+        \includegraphics[scale=0.5]{figuras/ansys4.jpg}
+        \label{ansys4}
+    \end{subfigure}
+    \begin{subfigure}{0.49\linewidth} \centering
+        \includegraphics[scale=0.5]{figuras/ansys7.jpg}
+        \label{ansys7}
+    \end{subfigure}
+    \caption{Dados utilizados nas placas refratarias internas}
+\end{figure}
 
-imagem
+Externamente foi colocado também o a convecção e a radiação.
+\begin{figure}[ht]
+\centering
+    \begin{subfigure}{0.49\linewidth} \centering
+        \includegraphics[scale=0.5]{figuras/ansys8.jpg}
+        \label{ansys8}
+    \end{subfigure}
+    \begin{subfigure}{0.49\linewidth} \centering
+        \includegraphics[scale=0.5]{figuras/ansys9.jpg}
+        \label{ansys9}
+    \end{subfigure}
+    \caption{Dados inseridos na face exterior do forno}
+\end{figure}
 
+A convergência de malha favorece no aumento dos nós e com isto aumentando a interação
+dos nodais e com isto aproximando o resultado analítico da realidade. Mas isto não garante que
+ocorra o resultado real. A convergência ajuda também a melhorar a linearidade da solução, através
+do modelo de Newton-Raphson.
 
+Para melhorar os resultados obtidos foi realizado uma convergência do resultado de
+temperatura que nos deu este gráfico. Está convergência aumentou o numero de nodais e
+elementos de analise, e observando a tabela a seguir vemos também a porcentagem de melhoria
+com a novo numero de interações.
+
+%TODO
+%\begin{figure}[ht]
+%\centering
+%    \begin{subfigure}{0.49\linewidth} \centering
+%        \includegraphics[scale=0.2]{figuras/ansys8.jpg}
+%        \label{ansys8}
+%    \end{subfigure}
+%    \begin{subfigure}{0.49\linewidth} \centering
+%        \includegraphics[scale=0.2]{figuras/ansys9.jpg}
+%        \label{ansys9}
+%    \end{subfigure}
+%    \caption{Tabela e gráfico de número de soluções de convergência de malha}
+%\end{figure}
+
+Estes são os resultados encontrados da analise. Foi retirado a temperatura em alguns pontos
+aleatórios. Nesta primeira imagem podemos observar a parte externa do forno no qual procuramos
+encontrar as temperaturas decididas no inicio do projeto.
+
+%TODO
+%\begin{figure}[ht]
+%	\centering
+%	\label{ansys11}
+%	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/ansys11.jpg}
+%    \caption{Gráfico de temperatura externa}
+%\end{figure}
+
+Nesta imagem retiramos a porta completa para demonstrarmos os resultados internos do
+forno como podemos observar encontramos 1200 o C nas resistências e internamente vemos que nas
+paredes se aproximam também deste portanto demonstrando todo o calor dissipado.
+
+%TODO
+%\begin{figure}[ht]
+%	\centering
+%	\label{ansys11}
+%	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/ansys11.jpg}
+%    \caption{Gráfico demonstrativo do interior do forno}
+%\end{figure}
+
+Este próxima imagem foi feito um corte simétrico lateral do forno para apresentação lateral:
+
+%TODO
+%\begin{figure}[ht]
+%	\centering
+%	\label{ansys11}
+%	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/ansys11.jpg}
+%    \caption{Gráfico do corte simétrico lateral do forno}
+%\end{figure}
+
+\subsection{Parte transiente}
+Para a parte transiente, foi considerado o regime de aquecimento e de esfriamento
+do forno, com o objetivo de quantificar o tempo necessário para o aquecimento do forno a
+partir da temperatura ambiente até a sua temperatura máxima de operação 1200ºC, assim
+como o seu esfriamento a partir da sua temperatura máxima, até a sua temperatura
+ambiente internamente.
+
+O procedimento para a simulação de aquecimento, foi semelhante a do regime
+permanente, contudo não foi necessário a utilização de uma curva estimada de
+aquecimento, pois este é o objetivo final desta simulação, obter a curva de aquecimento
+para qualquer ponto interno do forno.
+
+Os resultados apresentados nesta parte, foram realizados sobre uma geometria mais
+simplificada apresentada logo a seguir, em comparação ao caso passado. Neste caso há
+também um bloco de ar no interior para simular o comportamento do ar com a
+transferência de calor.
+\begin{figure}[ht]
+	\centering
+	\label{ansys11}
+	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/ansys11.jpg}
+    \caption{Seção transversal da estrutura simplificada}
+\end{figure}
+
+Observa-se também que esta geometria possui um formato diferente do caso
+anterior, que possui a geometria oficial de construção, mas isso será atualizado e os
+resultados serão postados para o ponto de controle 3. Este caso possui 25 mm de ar e a
+segunda camada de refratário é de 50 mm.
+
+\subsection{Resfriamento}
+Abaixo encontram-se alguns resultados para a simulação do resfriamento do forno,
+para tal aproximação deste comportamento, como pode ser visto na figura abaixo, foi
+considerado a temperatura do forno todo de 1200ºC, e a partir do tempo inicial, apenas os
+meios de condução, radiação e convecção agiram sobre a geometria.
+\begin{figure}[ht]
+	\centering
+	\label{ansys12}
+	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/ansys12.jpg}
+    \caption{Gráfico de temperatura inicial no regime transiente}
+\end{figure}
+
+Foi simulado para este forno, o período de uma hora, ou seja, o resultado presente na figura
+abaixo representa o estado do forno mantido em repouso, com as resistências desligadas e com a
+porta fechada após 3600 segundos, é visto que a temperatura média interna do forno é de 128ºC.
+\begin{figure}[ht]
+	\centering
+	\label{ansys13}
+	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/ansys13.jpg}
+    \caption{Gráfico de temperatura final no regime transiente}
+\end{figure}
+
+Com base no resultado acima, foi obtido a temperatura central do forno, de todas as
+iterações produzidas pelo "Transient Thermal ANSYS", e plotadas no gráfico abaixo para o período
+de resfriamento após 1 hora em repouso.
+
+A partir destes dados foi feito a interpolação por uma função Gaussiana de quinta ordem,
+apresentada a seguir, representada pela curva vermelha, e extrapolada para obter o tempo
+necessário de repouso do forno. A temperatura ambiente considerada foi de 22ºC, e para atingir
+este tempo, foi necessário 8100 segundos ou 2 horas e 15 minutos.
+
+\begin{equation}
+T(t) = 204 e^{-\frac{(t+8.753)}{87,32}^2}
+- 1029e^{-\frac{(t+574,3)}{861}^2} + 2,435*10.^7e^{-\frac{(t+8110)}{2591}^2} + 554,9e^{-
+\frac{(t+5999)}{7877}^2}
+\end{equation}
+\begin{figure}[ht]
+	\centering
+	\label{ansys14}
+	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/ansys14.jpg}
+    \caption{Gráfico de resfriamento do ar no ponto central do forno}
+\end{figure}
+
+\subsection{Aquecimento}
+Este modelo foi simulado de forma semelhante ao caso anterior, porém neste caso estamos
+aquecendo o forno a partir da temperatura ambiente até a temperatura de 1200ºC. Para isso, foi
+considerado a temperatura constante dos resistores em 1200ºC e um fluxo de calor saindo das
+resistências equivalentes a 3 kW.
+
+Além disso as condições de transferências de calor (condução, radiação e convecção)
+também foram consideradas, tanto para o interior do forno, quanto para o exterior. Abaixo
+apresentam-se as distribuições de temperatura em um corte longitudinal e transversal do forno.
+\begin{figure}[ht]
+	\centering
+	\label{ansys16}
+	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/ansys15.jpg}
+    \caption{Distribuição de temperatura ao longo do corte longitudinal do forno}
+\end{figure}
+\begin{figure}[ht]
+	\centering
+	\label{ansys16}
+	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/ansys16.jpg}
+    \caption{Distribuição de temperatura ao longo do corte transversal do forno}
+\end{figure}
+
+A partir dos resultados acima, foram obtido a temperatura central do forno, de todas as
+iterações produzidas pelo "Transient Thermal ANSYS", e plotadas no gráfico abaixo para o período
+de aquecimento de 3 horas, porém foi feito o estudo de forma gráfica de apenas 3282 segundos,
+pois este entra se em equilibro em apenas 412 segundos.
+
+Vale ressaltar que este equilíbrio em 412 segundos é apenas de um ponto central do ar no
+forno, e não significa portanto que toda a temperatura está em equilíbrio após este periodo. A partir
+destes dados foi feito a interpolação por uma função exponencial de segunda ordem apresentadas a
+seguir, como é apresentado na figura abaixo.
+\begin{equation}
+Tf(t) = 1119e^{-1,39*10.^- 6*t} + -1193e^{- 0,01673*t}
+\end{equation}
+%TODO
+%\begin{figure}[ht]
+%	\centering
+%	\label{ansys17}
+%	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/ansys17.jpg}
+%    \caption{Gráfico de aquecimento do ar no ponto central do forno}
+%\end{figure}
 
 \section{Métodos de Fabricação}
 A estrutura do projeto foi pensada para se obter a menor perda de calor durante o funcionamento do forno, uma variável crítica do projeto, bem como facilidade de fabricação, montagem dos elementos e custo associado.
@@ -608,7 +822,6 @@ Portanto uma pesquisa foi realizada pelo grupo elegendo os melhores materiais de
 	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/res1.JPG}
 \end{figure}
 
-MÉTODOS DE FABRICAÇÃO
 \begin{itemize}
 	\item As placas de fibra cerâmicas foram medidas e cortadas de acordo com as dimensões especificadas no projeto segundo a tabela abaixo:
 \end{itemize}
